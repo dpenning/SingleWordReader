@@ -3,7 +3,7 @@ import os
 import time
 
 timing = 666 #wpm
-sleep_time = (1/(timing/60.0))-.01
+sleep_time = (1/(timing/60.0))
 consonants = ["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"]
 punctuation = ["\"","\'",".",";",":"]
 vowels = ["a","e","i","o","u","y"]
@@ -81,4 +81,4 @@ if __name__ == "__main__":
 			time.sleep(sleep_time)
 			os.system("clear")
 			print("\n")
-			print(get_word_correction(b),correction_type="last_consonant_first_syllable"))
+			print(get_word_correction(b,correction_type="last_consonant_first_syllable"))
