@@ -2,7 +2,7 @@ import sys
 import os
 import time
 
-timing = 666 #wpm
+timing = 700 #wpm
 sleep_time = (1/(timing/60.0))
 consonants = ["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","z"]
 punctuation = ["\"","\'",".",";",":"]
@@ -75,10 +75,13 @@ if __name__ == "__main__":
 	os.system("clear")
 	print("\n")
 	print(get_word_correction("ready?",correction_type="last_consonant_first_syllable"))
-	for a in format_for_spritzing(text):
-		time.sleep(.5)
-		for b in a:
-			time.sleep(sleep_time)
-			os.system("clear")
-			print("\n")
-			print(get_word_correction(b,correction_type="last_consonant_first_syllable"))
+	try:
+		for a in format_for_spritzing(text):
+			time.sleep(.5)
+			for b in a:
+				time.sleep(sleep_time)
+				os.system("clear")
+				print("\n")
+				print(get_word_correction(b,correction_type="last_consonant_first_syllable"))
+	except KeyboardInterrupt:
+		pass
